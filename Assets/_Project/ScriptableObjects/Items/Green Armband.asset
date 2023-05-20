@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c8ada36fe27580408e9d717c394b86d, type: 3}
   m_Name: Green Armband
   m_EditorClassIdentifier: 
-  itemName: GoldArmband
+  itemName: Green Armband
   itemValue: 56
   bodySectionType: 7
-  frontViewItemSprite: {fileID: 21300000, guid: 3f919f09d0c58c6499dd2e4f7d43793e, type: 3}
-  backViewItemSprite: {fileID: 21300000, guid: b029a30fb829d144cbe22138c8907547, type: 3}
-  sideViewItemSprite: {fileID: 21300000, guid: 445c1a4d43e816f43b01b642db99bca4, type: 3}
+  frontViewItemSprite: {fileID: 21300000, guid: 3dd0e8d1f6284d44b81d5ad482f03c42, type: 3}
+  backViewItemSprite: {fileID: 21300000, guid: bc8e99c590d4bab49a739f9d5b968806, type: 3}
+  sideViewItemSprite: {fileID: 21300000, guid: 6dcb37ea52c34354cb34795ea4074f69, type: 3}

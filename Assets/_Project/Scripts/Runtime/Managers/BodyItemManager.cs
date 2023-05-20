@@ -38,6 +38,7 @@ namespace _Project.Scripts.Runtime.DataModels
             Debug.Log("Setting up cloths");
             foreach (var bodySection in bodySectionsFound)
             {
+                if(bodySection == null) continue;
                 bodySection.SetBodySectionItemSprites(itemSprites);
             }
         }

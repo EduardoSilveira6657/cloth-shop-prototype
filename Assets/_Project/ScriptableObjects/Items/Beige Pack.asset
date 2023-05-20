@@ -16,5 +16,5 @@ MonoBehaviour:
   itemValue: 45
   bodySectionType: 8
   frontViewItemSprite: {fileID: 21300000, guid: 58f8ae55344d6964c93423b82b3775c1, type: 3}
-  backViewItemSprite: {fileID: 21300000, guid: c63789f644442474cb749e997d7759fa, type: 3}
-  sideViewItemSprite: {fileID: 21300000, guid: 9f40429d5158f434d87687f56071ef0a, type: 3}
+  backViewItemSprite: {fileID: 21300000, guid: 9e771e040e51f924aa32c229b6ed456a, type: 3}
+  sideViewItemSprite: {fileID: 21300000, guid: c4e92ff718c6aa44293d5d6974b0e708, type: 3}
