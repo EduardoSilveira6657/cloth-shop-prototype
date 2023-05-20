@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c8ada36fe27580408e9d717c394b86d, type: 3}
+  m_Name: GoldArmband
+  m_EditorClassIdentifier: 
+  itemName: GoldArmband
+  itemValue: 56
+  bodySectionType: 7
+  frontViewItemSprite: {fileID: 21300000, guid: 3f919f09d0c58c6499dd2e4f7d43793e, type: 3}
+  backViewItemSprite: {fileID: 21300000, guid: b029a30fb829d144cbe22138c8907547, type: 3}
+  sideViewItemSprite: {fileID: 21300000, guid: 445c1a4d43e816f43b01b642db99bca4, type: 3}

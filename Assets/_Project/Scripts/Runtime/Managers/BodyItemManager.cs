@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace _Project.Scripts.Runtime.DataModels
 {
-    public class BodyModel : MonoBehaviour
+    public class BodyItemManager : MonoBehaviour
     {
         [SerializeField] List<BodySectionModel> bodySections;
         

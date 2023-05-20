@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c8ada36fe27580408e9d717c394b86d, type: 3}
+  m_Name: Green Shoes
+  m_EditorClassIdentifier: 
+  itemName: Green Shoes
+  itemValue: 56
+  bodySectionType: 4
+  frontViewItemSprite: {fileID: 21300000, guid: 0a16a67394638f14aa306203d1e11ab3, type: 3}
+  backViewItemSprite: {fileID: 21300000, guid: f8ba725c3ee59db4d83ce992498138fe, type: 3}
+  sideViewItemSprite: {fileID: 21300000, guid: 3e9b530181588c14084655b8653f02c0, type: 3}
