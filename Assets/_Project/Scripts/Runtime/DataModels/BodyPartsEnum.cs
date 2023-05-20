@@ -18,5 +18,6 @@ namespace _Project.Scripts.Runtime.DataModels
         Front,
         Back,
         Side,
+        Extra
     }
 }

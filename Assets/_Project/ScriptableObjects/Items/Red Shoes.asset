@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1c8ada36fe27580408e9d717c394b86d, type: 3}
-  m_Name: Leather Belt
+  m_Name: Red Shoes
   m_EditorClassIdentifier: 
-  itemName: Leather Belt
-  itemValue: 45
-  bodySectionType: 8
-  frontViewItemSprite: {fileID: 21300000, guid: c26f2486963eedd4e98dda6136063167, type: 3}
-  backViewItemSprite: {fileID: 21300000, guid: c63789f644442474cb749e997d7759fa, type: 3}
-  sideViewItemSprite: {fileID: 21300000, guid: 9f40429d5158f434d87687f56071ef0a, type: 3}
+  itemName: Red Shoes
+  itemValue: 56
+  bodySectionType: 4
+  frontViewItemSprite: {fileID: 21300000, guid: 4056a9882908b3047a8449bbb648cd48, type: 3}
+  backViewItemSprite: {fileID: 21300000, guid: fdf69a71bd6452b428bf43e2eb4e1ab8, type: 3}
+  sideViewItemSprite: {fileID: 21300000, guid: 974c0b3c13001c74785aae5649378188, type: 3}

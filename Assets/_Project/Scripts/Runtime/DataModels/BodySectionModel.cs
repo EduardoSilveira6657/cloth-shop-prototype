@@ -15,10 +15,11 @@ namespace _Project.Scripts.Runtime.DataModels
 
         public void SetBodySectionItemSprites(List<Sprite> itemSprites)
         {
+            var spriteIndex = bodySectionType == BodySectionType.Arms ? (int)BodyOrientationType.Extra : (int)bodyOrientationType;
             for (int i = 0; i < bodySectionParts.Count; i++)
             {
-                if (bodySectionParts[i] == null || itemSprites[i] == null) continue;
-                bodySectionParts[i].sprite = itemSprites[i];
+                if (bodySectionParts[i] == null || itemSprites[spriteIndex] == null) continue;
+                bodySectionParts[i].sprite = itemSprites[spriteIndex];
             }
         }
     }
