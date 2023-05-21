@@ -3,13 +3,11 @@ using _Project.Scripts.Runtime.CustomEventSystem;
 using _Project.Scripts.Runtime.Events;
 using _Project.Scripts.Runtime.Extensions;
 using _Project.Scripts.Runtime.Interaction;
-using _Project.Scripts.Runtime.Managers;
 using _Project.Scripts.Runtime.ScriptableObjects;
 using DG.Tweening;
 using UnityEngine;
-using UnityEngine.Pool;
 
-namespace _Project.Scripts.Runtime.UI_Controllers
+namespace _Project.Scripts.Runtime.UI
 {
     public class ShopUIController : MonoBehaviour
     {

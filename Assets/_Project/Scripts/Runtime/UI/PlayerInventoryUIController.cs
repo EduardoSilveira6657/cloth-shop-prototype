@@ -6,9 +6,8 @@ using _Project.Scripts.Runtime.Interaction;
 using _Project.Scripts.Runtime.ScriptableObjects;
 using DG.Tweening;
 using UnityEngine;
-using UnityEngine.Serialization;
 
-namespace _Project.Scripts.Runtime.UI_Controllers
+namespace _Project.Scripts.Runtime.UI
 {
     public class PlayerInventoryUIController : MonoBehaviour
     {

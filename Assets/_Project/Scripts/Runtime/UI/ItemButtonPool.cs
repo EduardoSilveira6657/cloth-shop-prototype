@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.Pool;
 
-namespace _Project.Scripts.Runtime.UI_Controllers
+namespace _Project.Scripts.Runtime.UI
 {
     public class ItemButtonPool : MonoBehaviour
     {

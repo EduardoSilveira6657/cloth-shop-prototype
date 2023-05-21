@@ -7,7 +7,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace _Project.Scripts.Runtime.UI_Controllers
+namespace _Project.Scripts.Runtime.UI
 {
     public class ItemButtonUI : MonoBehaviour
     {

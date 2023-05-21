@@ -1,5 +1,5 @@
 using _Project.Scripts.Runtime.ScriptableObjects;
-using _Project.Scripts.Runtime.UI_Controllers;
+using _Project.Scripts.Runtime.UI;
 using UnityEngine;
 
 namespace _Project.Scripts.Runtime.Managers
