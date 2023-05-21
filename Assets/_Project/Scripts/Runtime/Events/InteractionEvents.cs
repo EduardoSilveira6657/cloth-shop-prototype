@@ -79,4 +79,9 @@ namespace _Project.Scripts.Runtime.Events
             CurrentAmount = currentAmount;
         }
     }
+    
+    public class OpenShopEvent : GameEvent { }
+    public class CloseShopEvent : GameEvent { }
+    public class OpenInventoryEvent : GameEvent { }
+    public class CloseInventoryEvent : GameEvent { }
 }
