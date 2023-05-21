@@ -1405,7 +1405,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 821aa074fd2303b48b9d0c32124cb3f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  allItems: {fileID: 11400000, guid: 2dd363e57cd6cf44392a10cdd9f01025, type: 2}
+  equippedItems: {fileID: 11400000, guid: 0f087148cf64c784dbfd091112312972, type: 2}
   bodySections:
   - {fileID: 5787425537434131606}
   - {fileID: 243535464888132762}
@@ -2288,7 +2288,7 @@ SpriteRenderer:
   m_Size: {x: 1.2, y: 0.4}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &1106295465114282885

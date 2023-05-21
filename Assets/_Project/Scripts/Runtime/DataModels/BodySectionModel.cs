@@ -18,7 +18,11 @@ namespace _Project.Scripts.Runtime.DataModels
             var spriteIndex = bodySectionType == BodySectionType.Arms ? (int)BodyOrientationType.Extra : (int)bodyOrientationType;
             for (int i = 0; i < bodySectionParts.Count; i++)
             {
-                if (bodySectionParts[i] == null || itemSprites[spriteIndex] == null) continue;
+                if (bodySectionParts[i] == null || itemSprites[spriteIndex] == null)
+                {
+                    bodySectionParts[i].sprite = null;
+                    continue;
+                }
                 bodySectionParts[i].sprite = itemSprites[spriteIndex];
             }
         }

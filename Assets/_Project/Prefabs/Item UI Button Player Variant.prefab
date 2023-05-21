@@ -613,10 +613,30 @@ PrefabInstance:
     - target: {fileID: 5324522526402397488, guid: 0bcd797b523ad8e4aa1896204f3e238d, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
+      objectReference: {fileID: 4245406864697581447}
+    - target: {fileID: 5324522526402397488, guid: 0bcd797b523ad8e4aa1896204f3e238d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: BuyItem
+      objectReference: {fileID: 0}
+    - target: {fileID: 5324522526402397518, guid: 0bcd797b523ad8e4aa1896204f3e238d, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7040423375839790259, guid: 0bcd797b523ad8e4aa1896204f3e238d, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8690491738812967929, guid: 0bcd797b523ad8e4aa1896204f3e238d, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
+      objectReference: {fileID: 4245406864697581447}
+    - target: {fileID: 8690491738812967929, guid: 0bcd797b523ad8e4aa1896204f3e238d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SellItem
+      objectReference: {fileID: 0}
+    - target: {fileID: 8690491738812967929, guid: 0bcd797b523ad8e4aa1896204f3e238d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: _Project.Scripts.Runtime.UI_Controllers.ItemButtonUIPlayer, Assembly-CSharp
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 6770203634994626592, guid: 0bcd797b523ad8e4aa1896204f3e238d, type: 3}

@@ -10,7 +10,7 @@ namespace _Project.Scripts.Runtime.DataModels
 {
     public class BodyItemManager : MonoBehaviour
     {
-        [SerializeField] ItemLibrary allItems;
+        [SerializeField] ItemLibrary equippedItems;
         
         [SerializeField] List<BodySectionModel> bodySections;
 
@@ -18,25 +18,46 @@ namespace _Project.Scripts.Runtime.DataModels
         {
             SetupPlayerItems();
             CustomEventManager.AddListener<PlayerEquipItemEvent>(OnEquipItem);
+            CustomEventManager.AddListener<PlayerSellItemEvent>(OnPlayerSellItem);
         }
 
         void OnDestroy()
         {
             CustomEventManager.RemoveListener<PlayerEquipItemEvent>(OnEquipItem);
+            CustomEventManager.RemoveListener<PlayerSellItemEvent>(OnPlayerSellItem);
         }
 
         void SetupPlayerItems()
         {
-            foreach (var item in allItems.itemLibrary)
+            foreach (var item in equippedItems.itemLibrary)
             {
-                if(!item.IsEquipped) continue;
+                item.IsEquipped = true;
                 SetBodyItemSprites(item.bodySectionType, item.GetSprites());
             }
         }
 
         void OnEquipItem(PlayerEquipItemEvent evt)
         {
+            var lastEquipped = equippedItems.itemLibrary.Find(item => item.IsEquipped && item.bodySectionType == evt.ItemObjectEquippedByPlayer.bodySectionType);
+            if (lastEquipped != null)
+            {
+                lastEquipped.IsEquipped = false;
+                equippedItems.itemLibrary.Remove(lastEquipped);
+            }
+            evt.ItemObjectEquippedByPlayer.IsEquipped = true;
+            equippedItems.itemLibrary.Add(evt.ItemObjectEquippedByPlayer);
             SetBodyItemSprites(evt.ItemObjectEquippedByPlayer.bodySectionType, evt.ItemObjectEquippedByPlayer.GetSprites());
+        }
+        
+        void OnPlayerSellItem(PlayerSellItemEvent evt)
+        {
+            var lastEquipped = equippedItems.itemLibrary.Find(item => item.IsEquipped && item.bodySectionType == evt.ItemObjectSoldByPlayer.bodySectionType);
+            if (lastEquipped != null)
+            {
+                lastEquipped.IsEquipped = false;
+                equippedItems.itemLibrary.Remove(lastEquipped);
+            }
+            SetBodyItemSprites(lastEquipped.bodySectionType,new List<Sprite>(){null,null,null,null});
         }
 
         public void SetBodyItemSprites(BodySectionType bodySectionToChange ,List<Sprite> itemSprites)

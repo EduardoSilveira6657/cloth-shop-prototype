@@ -34,7 +34,7 @@ namespace _Project.Scripts.Runtime.UI_Controllers
             transform.localScale = Vector3.one;
         }
 
-        public void Dispose()
+        public virtual void Dispose()
         {
             _itemObjectReference = null;
             itemNameText.text = "";
@@ -51,7 +51,7 @@ namespace _Project.Scripts.Runtime.UI_Controllers
             Debug.Log("Buying item");
         }
         
-        public void SellItem()
+        public virtual void SellItem()
         {
             var sellEvent = new PlayerSellItemEvent(_itemObjectReference);
             CustomEventManager.Broadcast(sellEvent);
