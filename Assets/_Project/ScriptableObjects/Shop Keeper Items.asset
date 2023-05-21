@@ -13,19 +13,6 @@ MonoBehaviour:
   m_Name: Shop Keeper Items
   m_EditorClassIdentifier: 
   itemLibrary:
-  - {fileID: 11400000, guid: 72872be1282f921498b1b06e6de8e523, type: 2}
-  - {fileID: 11400000, guid: 75911ed1c99859745bd2161bc1db2b53, type: 2}
-  - {fileID: 11400000, guid: fd0665ed06431ad4c8efd9d7b400b4d5, type: 2}
-  - {fileID: 11400000, guid: c5c5d88ca7fa10b4cb69f081289656c7, type: 2}
-  - {fileID: 11400000, guid: 0559cfd01f456a24ba31fb013372da50, type: 2}
-  - {fileID: 11400000, guid: 9eee4fa643193e34c848bf573c4ed0a1, type: 2}
-  - {fileID: 11400000, guid: b9df87cae008fb94c924f379b663e4cc, type: 2}
-  - {fileID: 11400000, guid: ef810b09422f08944a546528099ec4b4, type: 2}
-  - {fileID: 11400000, guid: 8ae3891b0dbcafe4f90f8cb3d123221e, type: 2}
-  - {fileID: 11400000, guid: 0d4c081f62be8324a86b615cf7a0ff3f, type: 2}
-  - {fileID: 11400000, guid: 51b7766a52dbdd94b91b2fed0a084e8b, type: 2}
-  - {fileID: 11400000, guid: 71d51d295010d7644a43272cf5c3b628, type: 2}
-  - {fileID: 11400000, guid: 57e7ce0ff81e3ed4bbc113d3b1e2db76, type: 2}
   - {fileID: 11400000, guid: 0be926b6f4fdb394ba4f70169ab38edd, type: 2}
+  - {fileID: 11400000, guid: c5c5d88ca7fa10b4cb69f081289656c7, type: 2}
   - {fileID: 11400000, guid: 3c5e084e1a1fe284893df84e723606c7, type: 2}
-  - {fileID: 11400000, guid: a6c60dde1ec599c42a8a60e703f371cb, type: 2}
