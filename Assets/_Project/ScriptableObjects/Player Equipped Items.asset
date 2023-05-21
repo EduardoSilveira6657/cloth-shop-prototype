@@ -13,11 +13,7 @@ MonoBehaviour:
   m_Name: Player Equipped Items
   m_EditorClassIdentifier: 
   itemLibrary:
-  - {fileID: 11400000, guid: 0d4c081f62be8324a86b615cf7a0ff3f, type: 2}
-  - {fileID: 11400000, guid: ef810b09422f08944a546528099ec4b4, type: 2}
-  - {fileID: 11400000, guid: 9eee4fa643193e34c848bf573c4ed0a1, type: 2}
-  - {fileID: 11400000, guid: 8ae3891b0dbcafe4f90f8cb3d123221e, type: 2}
-  - {fileID: 11400000, guid: 3c5e084e1a1fe284893df84e723606c7, type: 2}
-  - {fileID: 11400000, guid: 72872be1282f921498b1b06e6de8e523, type: 2}
-  - {fileID: 11400000, guid: c5c5d88ca7fa10b4cb69f081289656c7, type: 2}
+  - {fileID: 11400000, guid: 0559cfd01f456a24ba31fb013372da50, type: 2}
   - {fileID: 11400000, guid: 75911ed1c99859745bd2161bc1db2b53, type: 2}
+  - {fileID: 11400000, guid: 51b7766a52dbdd94b91b2fed0a084e8b, type: 2}
+  - {fileID: 11400000, guid: c5c5d88ca7fa10b4cb69f081289656c7, type: 2}
