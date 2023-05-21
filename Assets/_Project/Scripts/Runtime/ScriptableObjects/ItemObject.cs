@@ -17,6 +17,21 @@ namespace _Project.Scripts.Runtime.ScriptableObjects
         public Sprite sideViewItemSprite;
 
 
+        bool isEquipped;
+        
+        public bool IsEquipped
+        {
+            get
+            {
+                isEquipped = PlayerPrefs.GetInt(itemName, 0) == 1;
+                return isEquipped;
+            }
+            set
+            {
+                isEquipped = value;
+                PlayerPrefs.SetInt(itemName, isEquipped ? 1 : 0);
+            }
+        }
 
         public virtual List<Sprite> GetSprites()
         {
@@ -27,7 +42,9 @@ namespace _Project.Scripts.Runtime.ScriptableObjects
                 sideViewItemSprite
             };
         }
-        #if UNITY_EDITOR
+
+
+#if UNITY_EDITOR
         void OnValidate()
         {
             itemName = name;

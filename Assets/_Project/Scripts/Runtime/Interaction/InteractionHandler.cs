@@ -16,6 +16,7 @@ namespace _Project.Scripts.Runtime.Interaction
             {
                 var requestInteractionEvent = InteractionEvents.RequestInteraction;
                 requestInteractionEvent.InteractionType = interactionType;
+                requestInteractionEvent.GameObject = gameObject;
                 CustomEventManager.Broadcast(requestInteractionEvent);
             }
         }
@@ -24,6 +25,7 @@ namespace _Project.Scripts.Runtime.Interaction
             isInRange = true;
             var enteredInteractionRangeEvent = InteractionEvents.EnteredInteractionRange;
             enteredInteractionRangeEvent.InteractionType = interactionType;
+            enteredInteractionRangeEvent.GameObject = gameObject;
             CustomEventManager.Broadcast(enteredInteractionRangeEvent);
             Debug.Log("IN Range");
         }
@@ -32,6 +34,7 @@ namespace _Project.Scripts.Runtime.Interaction
             isInRange = false;
             var exitedInteractionRangeEvent = InteractionEvents.ExitedInteractionRange;
             exitedInteractionRangeEvent.InteractionType = interactionType;
+            exitedInteractionRangeEvent.GameObject = gameObject;
             CustomEventManager.Broadcast(exitedInteractionRangeEvent);
             Debug.Log("Out of Range");
         }
@@ -44,6 +47,7 @@ namespace _Project.Scripts.Runtime.Interaction
             }
             var enteredInteractionRangeEvent = InteractionEvents.EnteredInteractionRange;
             enteredInteractionRangeEvent.InteractionType = interactionType;
+            enteredInteractionRangeEvent.GameObject = gameObject;
             CustomEventManager.Broadcast(enteredInteractionRangeEvent);
             Debug.Log("Mouse Entered hover");
         }
@@ -57,6 +61,7 @@ namespace _Project.Scripts.Runtime.Interaction
             }
             var exitedInteractionRangeEvent = InteractionEvents.ExitedInteractionRange;
             exitedInteractionRangeEvent.InteractionType = interactionType;
+            exitedInteractionRangeEvent.GameObject = gameObject;
             CustomEventManager.Broadcast(exitedInteractionRangeEvent);
             Debug.Log("Mouse Exit hover");
         }
@@ -70,6 +75,7 @@ namespace _Project.Scripts.Runtime.Interaction
             }
             var requestInteractionEvent = InteractionEvents.RequestInteraction;
             requestInteractionEvent.InteractionType = interactionType;
+            requestInteractionEvent.GameObject = gameObject;
             CustomEventManager.Broadcast(requestInteractionEvent);
         }
         

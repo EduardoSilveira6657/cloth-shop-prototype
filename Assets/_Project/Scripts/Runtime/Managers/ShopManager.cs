@@ -14,12 +14,12 @@ namespace _Project.Scripts.Runtime.Managers
             shopUIController.InitializeUI(shopInventory);
         }
 
-        void AddItemToShop(ItemObject itemObject)
+        public void AddItemToShop(ItemObject itemObject)
         {
             shopInventory.itemLibrary.Add(itemObject);
         }
     
-        void RemoveItemFromShop(ItemObject itemObject)
+        public void RemoveItemFromShop(ItemObject itemObject)
         {
             shopInventory.itemLibrary.Remove(itemObject);
         }
