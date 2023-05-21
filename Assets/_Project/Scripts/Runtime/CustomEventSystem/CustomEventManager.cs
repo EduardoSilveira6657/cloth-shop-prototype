@@ -5,8 +5,8 @@ namespace _Project.Scripts.Runtime.CustomEventSystem
 {
     public static class CustomEventManager
     {
-        private static readonly Dictionary<Type, Action<GameEvent>> s_Events = new Dictionary<Type, Action<GameEvent>>();
-        private static readonly Dictionary<Delegate, Action<GameEvent>> s_EventLookups = new Dictionary<Delegate, Action<GameEvent>>();
+        static readonly Dictionary<Type, Action<GameEvent>> s_Events = new Dictionary<Type, Action<GameEvent>>();
+        static readonly Dictionary<Delegate, Action<GameEvent>> s_EventLookups = new Dictionary<Delegate, Action<GameEvent>>();
 
         public static void AddListener<T>(Action<T> evt) where T : GameEvent
         {

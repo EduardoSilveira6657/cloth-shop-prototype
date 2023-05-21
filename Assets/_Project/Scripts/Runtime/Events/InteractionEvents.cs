@@ -9,6 +9,7 @@ namespace _Project.Scripts.Runtime.Events
         public static readonly RequestInteractionEvent RequestInteraction = new RequestInteractionEvent(); 
         public static readonly EnteredInteractionRangeEvent EnteredInteractionRange = new EnteredInteractionRangeEvent();
         public static readonly ExitedInteractionRangeEvent ExitedInteractionRange = new ExitedInteractionRangeEvent();
+        public static readonly NotInInteractionRangeEvent NotInInteractionRange = new NotInInteractionRangeEvent();
     }
 
     public class EnteredInteractionRangeEvent : GameEvent
@@ -22,6 +23,11 @@ namespace _Project.Scripts.Runtime.Events
     }
 
     public class RequestInteractionEvent : GameEvent
+    {
+        public InteractionType InteractionType;
+    }
+    
+    public class NotInInteractionRangeEvent : GameEvent
     {
         public InteractionType InteractionType;
     }

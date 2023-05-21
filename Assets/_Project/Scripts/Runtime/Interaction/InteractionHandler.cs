@@ -37,20 +37,47 @@ namespace _Project.Scripts.Runtime.Interaction
         }
         void OnMouseEnter()
         {
+            if (!isInRange)
+            {
+                NotInInteractionRange();
+                return;
+            }
+            var enteredInteractionRangeEvent = InteractionEvents.EnteredInteractionRange;
+            enteredInteractionRangeEvent.InteractionType = interactionType;
+            CustomEventManager.Broadcast(enteredInteractionRangeEvent);
             Debug.Log("Mouse Entered hover");
         }
 
         void OnMouseExit()
         {
+            if (!isInRange)
+            {
+                NotInInteractionRange();
+                return;
+            }
+            var exitedInteractionRangeEvent = InteractionEvents.ExitedInteractionRange;
+            exitedInteractionRangeEvent.InteractionType = interactionType;
+            CustomEventManager.Broadcast(exitedInteractionRangeEvent);
             Debug.Log("Mouse Exit hover");
         }
 
         void OnMouseUp()
         {
-            if(!isInRange) return;
+            if (!isInRange)
+            {
+                NotInInteractionRange();
+                return;
+            }
             var requestInteractionEvent = InteractionEvents.RequestInteraction;
             requestInteractionEvent.InteractionType = interactionType;
             CustomEventManager.Broadcast(requestInteractionEvent);
+        }
+        
+        void NotInInteractionRange()
+        {
+            var notInInteractionRangeEvent = InteractionEvents.NotInInteractionRange;
+            notInInteractionRangeEvent.InteractionType = interactionType;
+            CustomEventManager.Broadcast(notInInteractionRangeEvent);
         }
     }
 }
