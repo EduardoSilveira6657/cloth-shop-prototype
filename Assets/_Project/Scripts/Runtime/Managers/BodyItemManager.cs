@@ -1,5 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
+using _Project.Scripts.Runtime.CustomEventSystem;
+using _Project.Scripts.Runtime.Events;
 using _Project.Scripts.Runtime.ScriptableObjects;
 using UnityEngine;
 using UnityEngine.Serialization;
@@ -15,14 +17,26 @@ namespace _Project.Scripts.Runtime.DataModels
         void Start()
         {
             SetupPlayerItems();
+            CustomEventManager.AddListener<PlayerEquipItemEvent>(OnEquipItem);
+        }
+
+        void OnDestroy()
+        {
+            CustomEventManager.RemoveListener<PlayerEquipItemEvent>(OnEquipItem);
         }
 
         void SetupPlayerItems()
         {
             foreach (var item in allItems.itemLibrary)
             {
+                if(!item.IsEquipped) continue;
                 SetBodyItemSprites(item.bodySectionType, item.GetSprites());
             }
+        }
+
+        void OnEquipItem(PlayerEquipItemEvent evt)
+        {
+            SetBodyItemSprites(evt.ItemObjectEquippedByPlayer.bodySectionType, evt.ItemObjectEquippedByPlayer.GetSprites());
         }
 
         public void SetBodyItemSprites(BodySectionType bodySectionToChange ,List<Sprite> itemSprites)
