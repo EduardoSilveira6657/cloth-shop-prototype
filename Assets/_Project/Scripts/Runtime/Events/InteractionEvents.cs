@@ -42,7 +42,7 @@ namespace _Project.Scripts.Runtime.Events
     
     public class BuyItemFromShopEvent : GameEvent
     {
-        public ItemObject ItemObjectBought;
+        public readonly ItemObject ItemObjectBought;
         
         public BuyItemFromShopEvent(ItemObject itemObjectBought = null)
         {
@@ -66,6 +66,17 @@ namespace _Project.Scripts.Runtime.Events
         public PlayerEquipItemEvent(ItemObject itemObjectEquippedByPlayer = null)
         {
             ItemObjectEquippedByPlayer = itemObjectEquippedByPlayer;
+        }
+    }
+
+    public class RequestCurrentAmountOfCoinsEvent : GameEvent { }
+    public class CurrentAmountOfCoinsResponseEvent : GameEvent
+    {
+        public readonly int CurrentAmount;
+         
+        public CurrentAmountOfCoinsResponseEvent(int currentAmount = 0)
+        {
+            CurrentAmount = currentAmount;
         }
     }
 }

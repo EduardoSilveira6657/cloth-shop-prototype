@@ -49,5 +49,10 @@ namespace _Project.Scripts.Runtime.UI
             CustomEventManager.RemoveListener<PlayerEquipItemEvent>(OnPlayerEquipItem);
             CustomEventManager.RemoveListener<PlayerSellItemEvent>(OnPlayerSellItem);
         }
+
+        protected override void OnResponse(CurrentAmountOfCoinsResponseEvent evt)
+        {
+            
+        }
     }
 }

@@ -21,7 +21,12 @@ namespace _Project.Scripts.Runtime.UI
         
         
         public ItemObject ItemObjectReference => _itemObjectReference;
-        
+
+        void Start()
+        {
+            CustomEventManager.AddListener<CurrentAmountOfCoinsResponseEvent>(OnResponse);
+        }
+
         public virtual void InitializeUI(ItemObject itemObject, bool isBuy = false, RectTransform parent = null)
         {
             _itemObjectReference = itemObject;
@@ -32,6 +37,7 @@ namespace _Project.Scripts.Runtime.UI
             itemButtonCanvasGroup.FadeIn(0.1f);
             if(parent != null) transform.SetParent(parent);
             transform.localScale = Vector3.one;
+            CustomEventManager.Broadcast(new RequestCurrentAmountOfCoinsEvent());
         }
 
         public virtual void Dispose()
@@ -42,6 +48,7 @@ namespace _Project.Scripts.Runtime.UI
             actionButtons.ForEach(button => button.gameObject.SetActive(false));
             itemButtonCanvasGroup.FadeOut(0.1f);
             transform.SetParent(null);
+            CustomEventManager.RemoveListener<CurrentAmountOfCoinsResponseEvent>(OnResponse);
         }
         
         public void BuyItem()
@@ -56,6 +63,13 @@ namespace _Project.Scripts.Runtime.UI
             var sellEvent = new PlayerSellItemEvent(_itemObjectReference);
             CustomEventManager.Broadcast(sellEvent);
             Debug.Log("Selling item");
+        }
+        
+        protected virtual void OnResponse(CurrentAmountOfCoinsResponseEvent evt)
+        {
+            var canBuy = evt.CurrentAmount >= _itemObjectReference.itemValue;
+            itemValueText.color = canBuy ? Color.white : Color.red;
+            actionButtons[0].interactable = canBuy;
         }
     }
 }
