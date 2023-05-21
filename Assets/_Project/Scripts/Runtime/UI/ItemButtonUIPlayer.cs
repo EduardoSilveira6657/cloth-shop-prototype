@@ -28,6 +28,8 @@ namespace _Project.Scripts.Runtime.UI
             if(itemObject.IsEquipped) equippedButtonImage.gameObject.SetActive(true);
             CustomEventManager.AddListener<PlayerEquipItemEvent>(OnPlayerEquipItem);
             CustomEventManager.AddListener<PlayerSellItemEvent>(OnPlayerSellItem);
+            CustomEventManager.AddListener<OpenShopEvent>(OnShopOpen);
+            CustomEventManager.AddListener<CloseShopEvent>(OnShopClose);
         }
 
         public void EquipItem()
@@ -48,11 +50,22 @@ namespace _Project.Scripts.Runtime.UI
             equippedButtonImage.gameObject.SetActive(false);
             CustomEventManager.RemoveListener<PlayerEquipItemEvent>(OnPlayerEquipItem);
             CustomEventManager.RemoveListener<PlayerSellItemEvent>(OnPlayerSellItem);
+            CustomEventManager.RemoveListener<OpenShopEvent>(OnShopOpen);
+            CustomEventManager.RemoveListener<CloseShopEvent>(OnShopClose);
         }
 
         protected override void OnResponse(CurrentAmountOfCoinsResponseEvent evt)
         {
             
+        }
+        
+        void OnShopOpen(OpenShopEvent evt)
+        {
+            actionButtons[1].gameObject.SetActive(true);
+        }
+        void OnShopClose(CloseShopEvent evt)
+        {
+            actionButtons[1].gameObject.SetActive(false);
         }
     }
 }

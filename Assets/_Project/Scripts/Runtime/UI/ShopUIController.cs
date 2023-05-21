@@ -33,6 +33,7 @@ namespace _Project.Scripts.Runtime.UI
             CustomEventManager.AddListener<BuyItemFromShopEvent>(OnBuyItem);
             CustomEventManager.AddListener<PlayerSellItemEvent>(OnSellItem);
             InitializeUI(shopInventory);
+            shopInteractionWindowCanvasGroup.FadeOut(0.1f);
         }
 
         void Update()
@@ -53,8 +54,9 @@ namespace _Project.Scripts.Runtime.UI
 
         void OnRequestInteraction(RequestInteractionEvent evt)
         {
+            if(_shopIsOpen) return;
             if (interactionType != evt.InteractionType) return;
-            shopCanvasGroup.FadeIn(0.5f);
+            OpenShop();
         }
 
 
@@ -65,8 +67,8 @@ namespace _Project.Scripts.Runtime.UI
         }
         void OnExitedInteractionRange(ExitedInteractionRangeEvent evt)
         {
-            if(_shopIsOpen) return;
-            shopInteractionWindowCanvasGroup.FadeOut(0.5f);
+            shopInteractionWindowCanvasGroup.FadeOut(0.1f);
+            CloseShop();
         }
     
         void OnNotInInteractionRange(NotInInteractionRangeEvent obj)
@@ -74,7 +76,7 @@ namespace _Project.Scripts.Runtime.UI
             notInRangeWindowCanvasGroup.DOKill();
             notInRangeWindowCanvasGroup.FadeIn(0.5f);
             if(_notInRangeWarningTween != null) _notInRangeWarningTween.Kill();
-            _notInRangeWarningTween = DOVirtual.DelayedCall(1f, () => { notInRangeWindowCanvasGroup.FadeOut(0.5f); });
+            _notInRangeWarningTween = DOVirtual.DelayedCall(1f, () => { notInRangeWindowCanvasGroup.FadeOut(0.1f); });
         }
         
         public void InitializeUI(ItemLibrary itemsInTheShop)
@@ -92,14 +94,16 @@ namespace _Project.Scripts.Runtime.UI
             if(_shopIsOpen) return;
             _shopIsOpen = true;
             shopCanvasGroup.FadeIn(0.5f);
-            shopInteractionWindowCanvasGroup.FadeOut(0.5f);
+            shopInteractionWindowCanvasGroup.FadeOut(0.1f);
+            CustomEventManager.Broadcast(new OpenShopEvent());
         }
         
         public void CloseShop()
         {
             _shopIsOpen = false;
-            shopCanvasGroup.FadeOut(0.5f);
+            shopCanvasGroup.FadeOut(0.1f);
             shopInteractionWindowCanvasGroup.FadeIn(0.5f);
+            CustomEventManager.Broadcast(new CloseShopEvent());
         }
 
         void OnSellItem(PlayerSellItemEvent evt)

@@ -14,7 +14,7 @@ namespace _Project.Scripts.Runtime.UI
         [SerializeField] TextMeshProUGUI itemNameText;
         [SerializeField] TextMeshProUGUI itemValueText;
         [SerializeField] Image itemImage;
-        [SerializeField] List<Button> actionButtons;
+        [SerializeField] protected List<Button> actionButtons;
         [SerializeField] CanvasGroup itemButtonCanvasGroup;
         
         protected ItemObject _itemObjectReference;

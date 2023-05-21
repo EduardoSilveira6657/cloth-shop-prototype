@@ -24,20 +24,37 @@ namespace _Project.Scripts.Runtime.UI
 
         void Start()
         {
+            CustomEventManager.AddListener<RequestInteractionEvent>(OnRequestInteraction);
             CustomEventManager.AddListener<BuyItemFromShopEvent>(OnBuyItem);
             CustomEventManager.AddListener<PlayerSellItemEvent>(OnSellItem);
+            CustomEventManager.AddListener<CloseShopEvent>((closeShopEvent)=> CloseInventory());
+            CustomEventManager.AddListener<OpenShopEvent>((openShopEvent)=> OpenInventory());
             InitializeUI(playerInventory);
+        }
+
+        void OnRequestInteraction(RequestInteractionEvent evt)
+        {
+            if (evt.InteractionType != InteractionType.Shop) return;
+            OpenInventory();
         }
 
         void Update()
         {
-            if(_inventoryIsOpen && Input.GetKeyDown(KeyCode.Escape)) CloseInventory();
+            if (_inventoryIsOpen && (Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.I)))
+            {
+                CloseInventory();
+                return;
+            }
+            if(!_inventoryIsOpen && (Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.I))) OpenInventory();
         }
 
         void OnDestroy()
         {
+            CustomEventManager.RemoveListener<RequestInteractionEvent>(OnRequestInteraction);
             CustomEventManager.RemoveListener<BuyItemFromShopEvent>(OnBuyItem);
             CustomEventManager.RemoveListener<PlayerSellItemEvent>(OnSellItem);
+            CustomEventManager.RemoveListener<CloseShopEvent>((closeShopEvent)=> CloseInventory());
+            CustomEventManager.RemoveListener<OpenShopEvent>((openShopEvent)=> OpenInventory());
         }
 
         public void InitializeUI(ItemLibrary itemsInTheInventory)
@@ -49,18 +66,25 @@ namespace _Project.Scripts.Runtime.UI
                 _itemButtonUIs.Add(itemButtonUI);
             }
         }
+        public void ToggleInventory()
+        {
+            if(_inventoryIsOpen) CloseInventory();
+            else OpenInventory();
+        }
         
         public void OpenInventory()
         {
             if(_inventoryIsOpen) return;
             _inventoryIsOpen = true;
             playerInventoryCanvasGroup.FadeIn(0.5f);
+            CustomEventManager.Broadcast(new OpenInventoryEvent());
         }
         
         public void CloseInventory()
         {
             _inventoryIsOpen = false;
-            playerInventoryCanvasGroup.FadeOut(0.5f);
+            if(playerInventoryCanvasGroup.alpha > 0.1f) playerInventoryCanvasGroup.FadeOut(0.1f);
+            CustomEventManager.Broadcast(new CloseInventoryEvent());
         }
 
         void OnSellItem(PlayerSellItemEvent evt)
